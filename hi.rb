@@ -19,12 +19,14 @@ get '/name/:first/:last/:age' do
   "your name is #{params[:first]} #{params[:last]}. you are #{params[:age]} years old"
 end
 
-get '/multiply/:x/:y' do
-result = params[:x].to_f * params[:y].to_f
-"the result is #{result}"
+get '/multiply/:x/:y.html' do
+  @result = params[:x].to_f * params[:y].to_f
+# "the result is #{result}"
+  erb :calc   #stands for Embedded Ruby
 end
 
 get '/divide/:x/:y' do
-result = params[:x].to_f / params[:y].to_f
-"the result is #{result}"
+  @result = params[:x].to_f / params[:y].to_f
+# "the result is #{result}"
+  erb :calc
 end
