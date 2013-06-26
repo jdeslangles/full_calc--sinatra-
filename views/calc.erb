@@ -1,13 +1,17 @@
-<!doctype html>
-<html lang='en'>
-  <head>
-    <meta charst='utf-8'>
-    <title>Calculator</title>
-    <link rel="stylesheet" href="/style.css"/>
-  </head>
-  <body>
-    <p>
-      the result is <%= @result %>   <!-- Instance variable -->
-    </p>
-  </body>
-</html>
+<% if @result %>
+<section>
+  <header><h1>Results</h1>
+  </header>
+ <p>
+      The result of <%=@first%> <%=@operator%> <%=@second%> is <%=@result%>   <!-- Instance variable -->
+</p>
+</section>
+<% end %>
+
+<form action='/calc' method='get'>
+  first: <input type='number' name='first'>
+  operator: <input type='text' name='operator'>
+  second: <input type='number' name='second'>
+  <button>calculate!</button>
+
+</form>
