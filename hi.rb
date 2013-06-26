@@ -12,5 +12,9 @@ end
 
 get '/name/:first' do
   return "hello, #{params[:first]}"
-  "oioi" # --> Careful!!! the last thing is what will be returned UNLESS you've specified what you want to return.
+  "oioi"                      # --> Careful!!! the last thing is what will be returned UNLESS you've specified what you want to return.
+end
+
+get '/name/:first/:last/:age' do
+  "your name is #{params[:first]} #{params[:last]}. you are #{params[:age]} years old"
 end
