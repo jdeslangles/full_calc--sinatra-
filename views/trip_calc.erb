@@ -1,0 +1,19 @@
+
+<% if @result_time && @result_cost %>
+<section>
+  <header><h1>Results</h1>
+  </header>
+ <p>
+      Your trip will take you <%=@result_time%> hours and cost you $<%=@result_cost%>
+</p>
+</section>
+<% end %>
+
+<form action='/trip_calc' method='get'>
+  distance(miles): <input type='number' name='distance'>
+  mpg: <input type='number' name='mpg'>
+  fuel price/gallon: <input type='number' name='price'>
+  speed(mph): <input type='number' name='speed'>
+  <button>calculate!</button>
+
+</form>

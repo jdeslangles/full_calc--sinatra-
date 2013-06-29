@@ -1,0 +1,17 @@
+<% if @mortgage_result !=nil %>
+<section>
+  <header><h1>Results</h1>
+  </header>
+ <p>
+      Your monthly payment is <%=@mortgage_result%>
+</p>
+</section>
+<% end %>
+
+<form action='/mortgage_calc' method='get'>
+  principal: <input type='number' name='principal'>
+  yearly interest rate (%): <input type='number' name='yearly_rate'>
+  number of payments: <input type='number' name='payment_number'>
+  <button>calculate!</button>
+
+</form>

@@ -1,0 +1,23 @@
+<% if (@result_pounds && !@result_pounds.nan?) || (@result_kilos && !@result_kilos.nan?) %>
+<section>
+  <header><h1>Results</h1>
+  </header>
+ <p>
+    <% if @result_pounds != nil %>
+      Your BMI is <%=@result_pounds %>   <!-- Instance variable -->
+    <% elsif @result_kilos != nil %>
+      Your BMI is <%=@result_kilos%>   <!-- Instance variable -->
+    <% end %>
+  </p>
+  <% end %>
+
+<form action='/bmi_calc' method='get'>
+  weight (pounds): <input type='number' name='weight_pounds'>
+  height (inches): <input type='number' name='height_inches'>
+</br>OR</br>
+  weight (kilos): <input type='number' name='weight_kilos'>
+  height (cm): <input type='number' name='height_cm'>
+
+  <button>calculate!</button>
+
+</form>
